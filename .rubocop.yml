@@ -1,0 +1,33 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  DisplayCopNames: True
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+
+Layout/AlignParameters:
+  Enabled: false
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented_relative_to_receiver
+
+Lint/UnneededSplatExpansion:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 10
+
+Metrics/LineLength:
+  Max: 80
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/DoubleNegation:
+  Enabled: False
