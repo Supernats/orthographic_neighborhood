@@ -17,11 +17,21 @@ class GenerateNeighbors
 
   def call
     return [] unless valid_input?
+
+    [
+      removals,
+    ].flatten
   end
 
   private
 
   attr_reader :input
+
+  def removals
+    Array.new(input.size) { input }.map.with_index do |el, i|
+      el.slice(0, i) + el.slice(i + 1, el.length - 1)
+    end
+  end
 
   def valid_input?
     !!(input =~ /^[a-zA-Z]+$/)

@@ -11,6 +11,28 @@ describe GenerateNeighbors do
   describe '::[]' do
     subject { GenerateNeighbors[input] }
 
+    describe 'for the word "cat"' do
+      let(:input) { 'cat' }
+
+      describe 'with respect to removing letters' do
+        let(:expected) do
+          %w[
+            at
+            ca
+            ct
+          ]
+        end
+
+        it 'works' do
+          output = subject
+          assert(
+            expected.all?(&output.method(:include?)),
+            "Got: #{output},\nExpected: #{expected}",
+          )
+        end
+      end
+    end
+
     describe 'bad input' do
       let(:expected) { [] }
 
