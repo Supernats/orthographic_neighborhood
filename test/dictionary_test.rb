@@ -3,8 +3,6 @@
 require 'minitest/spec'
 require 'minitest/autorun'
 require 'minitest/pride'
-require 'pry'
-require 'pry-byebug'
 
 require_relative '../lib/dictionary'
 

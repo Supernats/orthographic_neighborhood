@@ -4,6 +4,10 @@ require 'yaml'
 
 # A Ruby Hash interface with Webster's Unabridged English Dictionary in JSON.
 class Dictionary
+  def initialize(pre_warm: false)
+    @hashed = YAML.load_file(SOURCE_PATH) if pre_warm
+  end
+
   def [](string)
     hashed[string.upcase]
   end
