@@ -17,7 +17,7 @@ class ModifySentence
   end
 
   def initialize(input)
-    @input = input
+    @input = input.downcase
   end
 
   def call

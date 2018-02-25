@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
-require 'yaml'
+require 'json'
 
 # A Ruby Hash interface with Webster's Unabridged English Dictionary in JSON.
 class Dictionary
   def initialize(pre_warm: false)
-    @hashed = YAML.load_file(SOURCE_PATH) if pre_warm
+    @hashed = load_file if pre_warm
   end
 
   def [](string)
-    hashed[string.upcase]
+    hashed[string.downcase]
   end
 
   private
@@ -18,6 +18,10 @@ class Dictionary
   private_constant :SOURCE_PATH
 
   def hashed
-    @hashed ||= YAML.load_file(SOURCE_PATH)
+    @hashed ||= load_file
+  end
+
+  def load_file
+    JSON[File.read(SOURCE_PATH)]
   end
 end
