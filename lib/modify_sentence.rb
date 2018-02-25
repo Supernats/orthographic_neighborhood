@@ -21,7 +21,7 @@ class ModifySentence
   end
 
   def call
-    all_sentences.reject { |sentence| sentence == input }
+    all_sentences.reject { |sentence| sentence == input }.uniq
   end
 
   private
