@@ -1,5 +1,7 @@
-#!/usr/bin/env ruby -w
+#!/usr/local/bin/ruby -w
+
+# frozen_string_literal: true
 
 require_relative '../lib/modify_sentence.rb'
 
-puts ModifySentence[$ARGV.join(' ')]
+puts ModifySentence[ARGV.join(' ')]
